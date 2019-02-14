@@ -57,7 +57,7 @@
         android:ems="10"
         android:hint="@string/name"
         android:importantForAutofill="no"
-        android:inputType="number|text"
+        android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/save"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:onClick="onSave"
         android:text="@string/save"
         app:layout_constraintEnd_toStartOf="@+id/load"
         app:layout_constraintHorizontal_bias="0.5"
@@ -81,6 +82,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="onLoad"
         android:text="@string/load"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -114,7 +116,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/data"
-                android:inputType="textCapSentences|textCapWords"
+                android:inputType="textCapCharacters"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="173dp" />
         </LinearLayout>
