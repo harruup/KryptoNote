@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+
+import static android.widget.Toast.makeText;
 
 
 public class KryptoNoteActivity extends AppCompatActivity {
@@ -62,12 +63,14 @@ public class KryptoNoteActivity extends AppCompatActivity {
             FileWriter fw = new FileWriter(file);
             fw.write(((EditText) findViewById(R.id.data)).getText().toString());
             fw.close();
-            Toast.makeText(this, "Note Saved.", Toast.LENGTH_LONG);
+            Toast label = Toast.makeText(this, "Note Saved.", Toast.LENGTH_LONG);
+            label.show();
 
         }
         catch (Exception e) {
 
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG);
+          Toast label= Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG);
+          label.show();
         }
         }
 
@@ -90,8 +93,8 @@ public class KryptoNoteActivity extends AppCompatActivity {
         }
         catch (Exception e) {
 
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG);
-
+           Toast label = Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG);
+            label.show();
         }
     }
 
