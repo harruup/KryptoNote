@@ -20,7 +20,7 @@ public class KryptoNoteActivity extends AppCompatActivity {
         setContentView(R.layout.kryptonote_layout);
     }
 
-    public void onEncrypt(View v) {
+   /* public void onEncrypt(View v) {
 
         EditText editKey = findViewById(R.id.key);
         String givenKey = editKey.getText().toString();
@@ -50,7 +50,36 @@ public class KryptoNoteActivity extends AppCompatActivity {
 
         ((EditText) findViewById(R.id.data)).setText(decryptedData);
 
+    }*/
+    public void onCipher(View v) {
+
+        EditText editKey = findViewById(R.id.key);
+        String givenKey = editKey.getText().toString();
+
+        EditText editData = findViewById(R.id.data);
+        String givenData = editData.getText().toString();
+
+        CipherModel cipherText = new CipherModel(givenKey);
+
+        switch(v.getId())
+        {
+            case R.id.encrypt:
+
+                String encryptedData = cipherText.encrypt(givenData);
+                ((EditText) findViewById(R.id.data)).setText(encryptedData);
+
+            break;
+
+            case R.id.decrypt:
+
+                String decryptedData = cipherText.decrypt(givenData);
+                ((EditText) findViewById(R.id.data)).setText(decryptedData);
+
+            break;
+        }
     }
+
+
 
     public void onSave(View v) {
 
